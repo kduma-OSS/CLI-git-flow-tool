@@ -1,0 +1,53 @@
+{
+    "name": "kduma/git-flow-tool",
+    "description": "GIT Flow tools for Laravel ",
+    "keywords": ["kduma","laravel-git-flow-tools"],
+    "homepage": "https://github.com/kduma-OSS/CLI-git-flow-tool",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/kduma-OSS/CLI-git-flow-tool/issues",
+        "source": "https://github.com/kduma-OSS/CLI-git-flow-tool"
+    },
+    "authors": [
+        {
+            "name": "Krystian Duma",
+            "email": "git@krystian.duma.sh"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "gitonomy/gitlib": "^1.5",
+        "laravel-zero/framework": "^11.0.3",
+        "laravel/prompts": "^0.3.1",
+        "phlak/semver": "^6.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.18.1",
+        "mockery/mockery": "^1.6.12",
+        "pestphp/pest": "^3.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "bin": ["git-flow-tool"]
+}
