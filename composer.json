@@ -1,0 +1,36 @@
+{
+    "name": "kduma/git-flow-tool",
+    "description": "GIT Flow tools for Laravel ",
+    "keywords": ["kduma","laravel-git-flow-tools"],
+    "homepage": "https://github.com/kduma-OSS/CLI-git-flow-tool",
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/kduma-OSS/CLI-git-flow-tool/issues",
+        "source": "https://github.com/kduma-OSS/CLI-git-flow-tool"
+    },
+    "authors": [
+        {
+            "name": "Krystian Duma",
+            "email": "git@krystian.duma.sh"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+
+    },
+    "autoload-dev": {
+
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "bin": ["builds/git-flow-tool"]
+}
