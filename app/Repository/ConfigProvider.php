@@ -59,7 +59,7 @@ class ConfigProvider
             versionProviderConfiguration: $config['versionProvider'],
             versionProvider: $this->versionProviderFactory->getProviderFor($config['versionProvider'], dirname($configFile)),
 
-            gitFlowConfiguration: $config['gitFlow'],
+            gitFlowConfiguration: $config['gitFlow'] ?? '',
             gitFlow: new GitFlowConfig(
                 masterBranch: $gitFlow['branch']['master'] ?? 'master',
                 developBranch: $gitFlow['branch']['develop'] ?? 'develop',
