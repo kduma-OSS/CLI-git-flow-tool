@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Repository\VersionProviders\FlatFileVersionProvider;
+use App\Repository\VersionProviders\JsonVersionProvider;
 use App\Repository\VersionProviders\PhpArrayVersionProvider;
 use App\Repository\VersionProviders\VersionProviderInterface;
 use App\Exceptions\VersionProviderException;
@@ -38,6 +39,23 @@ class VersionProviderFactory
                 }
 
                 return new PhpArrayVersionProvider($config['filename'], $config['key'], $workingDirectory);
+
+            case 'json':
+                if (!isset($config['filename'])) {
+                    throw new VersionProviderException('json', 'Missing filename in config!');
+                }
+
+                if (!isset($config['key'])) {
+                    throw new VersionProviderException('json', 'Missing array key in config!');
+                }
+
+                return new JsonVersionProvider(
+                    filename: $config['filename'],
+                    key: $config['key'],
+                    workingDirectory: $workingDirectory,
+                    pretty_print: ($config['pretty'] ?? 'true') == 'true',
+                    unescaped_slashes: ($config['unescaped_slashes'] ?? 'false') == 'true',
+                );
 
             default:
                 throw new VersionProviderException($type, 'Invalid provider type!');

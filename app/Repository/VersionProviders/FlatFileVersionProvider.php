@@ -7,6 +7,8 @@ namespace App\Repository\VersionProviders;
  */
 readonly class FlatFileVersionProvider implements VersionProviderInterface
 {
+    use FilePathToolsTrait;
+
     public string $filename;
 
     public function __construct(string $filename, string $workingDirectory)
@@ -26,10 +28,5 @@ readonly class FlatFileVersionProvider implements VersionProviderInterface
     public function setVersion(string $version): void
     {
         file_put_contents($this->filename, $version);
-    }
-
-    protected function getFilePath(string $filename, string $workingDirectory): string
-    {
-        return str_starts_with($filename, DIRECTORY_SEPARATOR) ? $filename : $workingDirectory . DIRECTORY_SEPARATOR . $filename;
     }
 }
