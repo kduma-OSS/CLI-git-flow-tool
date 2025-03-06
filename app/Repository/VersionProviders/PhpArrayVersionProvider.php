@@ -10,6 +10,8 @@ use App\Exceptions\VersionProviderException;
  */
 readonly class PhpArrayVersionProvider implements VersionProviderInterface
 {
+    use FilePathToolsTrait;
+
     public string $filename;
 
     public function __construct(string $filename, public string $key, string $workingDirectory)
@@ -55,10 +57,5 @@ readonly class PhpArrayVersionProvider implements VersionProviderInterface
         );
 
         file_put_contents($this->filename, $result);
-    }
-
-    protected function getFilePath(string $filename, string $workingDirectory): string
-    {
-        return str_starts_with($filename, DIRECTORY_SEPARATOR) ? $filename : $workingDirectory . DIRECTORY_SEPARATOR . $filename;
     }
 }
