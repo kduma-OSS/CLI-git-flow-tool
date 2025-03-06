@@ -20,7 +20,7 @@ readonly class JsonVersionProvider implements VersionProviderInterface
         public string $key,
         string $workingDirectory,
         public bool $pretty_print = true,
-        public bool $unescaped_slashes = false,
+        public bool $unescaped_slashes = true,
     )
     {
         $this->filename = $this->getFilePath($filename, $workingDirectory);
