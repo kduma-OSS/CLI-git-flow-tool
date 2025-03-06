@@ -54,7 +54,7 @@ class VersionProviderFactory
                     key: $config['key'],
                     workingDirectory: $workingDirectory,
                     pretty_print: ($config['pretty'] ?? 'true') == 'true',
-                    unescaped_slashes: ($config['unescaped_slashes'] ?? 'false') == 'true',
+                    unescaped_slashes: ($config['unescaped_slashes'] ?? 'true') == 'true',
                 );
 
             default:
