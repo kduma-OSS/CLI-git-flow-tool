@@ -3,6 +3,8 @@ Useful helper for using gitflow-like branching model in a project.
 It is a simple shell script that helps you to create, finish and publish branches in a git repository.
 It supports automatically bumping version tag and pushing from and to correct branches.
 
+Check full documentation here: [opensource.duma.sh/apps/git-flow](https://opensource.duma.sh/apps/git-flow)
+
 ## Installation
 
 in your project install the tool by running:
